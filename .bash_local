@@ -1,0 +1,20 @@
+. /etc/bash.bashrc
+
+export PATH=$PATH:$HOME/bin
+export EDITOR=vim
+
+export PYTHONPATH=$HOME/lib/python
+
+alias py25=python2.5
+export PYTHONSTARTUP=$HOME/.pystartup
+
+export PYLIB=$HOME/lib/python
+
+if [ "$TERM" = "xterm" -o "$TERM" = "xterm-color" -o "$TERM" = "xterms" -o "$TERM" = "screen" ]; then
+    export PROMPT_COMMAND='echo -ne "\033]0;${SCREENTITLE}${USER}@${HOSTNAME} \007"'
+fi
+
+export DEBFULLNAME="Joe Talbott"
+export DEBEMAIL="joe.talbott@canonical.com"
+
+alias vm-start="vm-start -v"

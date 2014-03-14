@@ -1,0 +1,81 @@
+# file: vm-tools.completion
+#
+
+_get_vms_running ()
+{
+    local cur
+    COMPREPLY=()
+
+    cur=${COMP_WORDS[COMP_CWORD]}
+
+    COMPREPLY=( $(compgen -W "$(virsh -q list | cut -d' ' -f4)" -- ${cur}) )
+
+    return 0
+}
+
+complete -F _get_vms_running vm-stop
+complete -F _get_vms_running vm-view
+
+_get_vms_inactive ()
+{
+    local cur
+    COMPREPLY=()
+
+    cur=${COMP_WORDS[COMP_CWORD]}
+    #COMPREPLY=( $(compgen -W "$(ls ~/machines | sed 's/.*machines\///')" -- ${cur}) )
+    COMPREPLY=( $(compgen -W "$(virsh -q list --inactive | cut -d' ' -f4)" -- ${cur}) )
+
+    return 0
+}
+
+complete -F _get_vms_inactive vm-start
+
+# schroot stuff
+_get_schroots ()
+{
+	local cur
+	local arg
+	COMPREPLY=()
+
+	cur=${COMP_WORDS[COMP_CWORD]}
+	arg=${COMP_WORDS[COMP_CWORD-1]}
+
+	cmd=${cur##source:}
+
+	#echo "\ncur: '$cur', cmd: '$cmd', arg: '$arg'\n"
+
+	if [ "$cur" = ":" -a "$arg" = "source" ]; then
+	  cur=""
+	fi
+
+	COMPREPLY=( $(compgen -W "$(ls /var/lib/schroot/chroots/)" -- ${cur}) )
+
+	return 0
+}
+
+complete -F _get_schroots schroot
+
+# virsh
+_get_virsh_domains ()
+{
+	local cur
+	local arg
+	COMPREPLY=()
+
+	cur=${COMP_WORDS[COMP_CWORD]}
+	arg=${COMP_WORDS[COMP_CWORD-1]}
+
+	if [ "${arg}" = "virsh" ]; then
+		COMPREPLY=( $(compgen -W "start stop edit dumpxml" -- ${cur}) )
+	elif [ "${arg}" = "stop" ]; then
+		COMPREPLY=( $(compgen -W "$(virsh -q list | tr -s ' ' | cut -d ' ' -f3)" -- ${cur}) )
+	elif [ "${arg}" = "start" ]; then
+		COMPREPLY=( $(compgen -W "$(virsh -q list --inactive | tr -s ' ' | cut -d ' ' -f3)" -- ${cur}) )
+	else
+		COMPREPLY=( $(compgen -W "$(virsh -q list --all | tr -s ' ' | cut -d ' ' -f3)" -- ${cur}) )
+	fi
+
+	return 0
+}
+
+complete -F _get_virsh_domains virsh
