@@ -1,0 +1,42 @@
+set -g base-index 1
+set -g pane-base-index 1
+set-option -s escape-time 0
+set-option -s repeat-time 0
+set -g update-environment -r
+
+set-option display-panes-time 300
+set-option -g status-right "\"#22T\" %Y-%m-%d %H:%M"
+set-option -g status-bg green
+set-option -g status-fg black
+set-option -g pane-border-bg black
+set-option -g pane-border-fg green
+set-option -g pane-active-border-fg black
+set-option -g pane-active-border-bg green
+
+set-window-option -g automatic-rename off
+set-window-option -g window-status-bg green
+set-window-option -g window-status-fg black
+set-window-option -g window-status-current-bg green
+set-window-option -g window-status-current-fg black
+set-window-option -g window-status-activity-bg yellow
+set-window-option -g window-status-activity-fg black
+set -g message-bg yellow
+set -g message-fg black
+
+set -g prefix C-b
+unbind-key a
+set -g prefix2 F12
+
+#bind-key -n C-UP select-pane -U
+#bind-key -n C-DOWN select-pane -D
+#bind-key -n C-LEFT select-pane -L
+#bind-key -n C-RIGHT select-pane -R
+
+unbind-key l
+bind-key l last-window
+
+unbind-key '"'
+bind '"' split-window
+
+unbind-key "'"
+bind "'" choose-window
