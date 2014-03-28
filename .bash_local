@@ -1,5 +1,3 @@
-. /etc/bash.bashrc
-
 export PATH=$PATH:$HOME/bin
 export EDITOR=vim
 
@@ -10,11 +8,60 @@ export PYTHONSTARTUP=$HOME/.pystartup
 
 export PYLIB=$HOME/lib/python
 
-if [ "$TERM" = "xterm" -o "$TERM" = "xterm-color" -o "$TERM" = "xterms" -o "$TERM" = "screen" ]; then
-    export PROMPT_COMMAND='echo -ne "\033]0;${SCREENTITLE}${USER}@${HOSTNAME} \007"'
-fi
+#if [ "$TERM" = "xterm" -o "$TERM" = "xterm-color" -o "$TERM" = "xterms" -o "$TERM" = "screen" ]; then
+#	export PROMPT_COMMAND='echo -ne "\033]0;${SCREENTITLE}${USER}@${HOSTNAME} \007"'
+#fi
 
 export DEBFULLNAME="Joe Talbott"
 export DEBEMAIL="joe.talbott@canonical.com"
 
 alias vm-start="vm-start -v"
+
+debug_rc () {
+	OUTPUT=$(env | grep 'OS_')
+
+	if [ -n "$OUTPUT" ]; then
+		echo "rc sourced"
+	else
+		echo "rc not sourced"
+	fi
+
+	echo "JUJU_ENV: $JUJU_ENV"
+	env | grep OS_
+}
+
+rc_sourced () {
+	OUTPUT=$(env | grep 'OS_')
+
+	if [ -z $OUTPUT ]; then
+		return 1
+	else
+		return 0
+	fi
+}
+
+check_cloud () {
+	OUTPUT=$(env | grep 'OS_')
+
+	if [ -n "$JUJU_ENV" -a -n "$OUTPUT" ]; then
+		echo "using cloud: $JUJU_ENV"
+	else
+		echo "incomplete cloud setup"
+	fi
+}
+
+set_cloud () {
+	CLOUD=$1
+
+	if [ "$CLOUD" = "hp" -o "$CLOUD" = "hp2" ]; then
+		. ~/.hpcloud-rc
+	else
+		. ~/.canonistack/novarc
+	fi
+	export JUJU_ENV=$CLOUD
+
+	check_cloud
+}
+
+PS1='${JUJU_ENV:+[$JUJU_ENV]}${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+export GPGKEY=A4723EF7
