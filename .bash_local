@@ -58,6 +58,7 @@ set_cloud () {
 	else
 		. ~/.canonistack/novarc
 	fi
+	. ~/.lp_creds-rc
 	export JUJU_ENV=$CLOUD
 
 	check_cloud
