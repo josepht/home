@@ -110,19 +110,3 @@ if [ -f $LOCAL_BASHRC ]; then
 fi
 
 export WORKON_HOME=$HOME/environments
-
-if [ -d .git ]; then
-	git fetch
-	FULL_STATUS=$(git status -uno | grep "Your branch is")
-	STATUS=$(echo $FULL_STATUS | sed 's/.*Your branch is \(\S\+\).*/\1/')
-
-	if [ "$STATUS" = "behind" ]; then
-		echo "Need to pull"
-	elif [ "$STATUS" = "ahead" ]; then
-		echo "Need to push"
-	elif [ "$FULL_STATUS" = "" ]; then
-		echo "Uncommited changes"
-	else
-		echo "Diverged"
-	fi
-fi
