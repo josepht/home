@@ -110,3 +110,7 @@ if [ -f $LOCAL_BASHRC ]; then
 fi
 
 export WORKON_HOME=$HOME/environments
+
+if [ -d .git ]; then
+	git status -s -uno
+fi

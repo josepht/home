@@ -25,6 +25,7 @@ set -g message-fg black
 
 set -g prefix C-b
 unbind-key a
+bind-key C-b send-prefix
 set -g prefix2 F12
 
 #bind-key -n C-UP select-pane -U
@@ -36,6 +37,11 @@ bind-key -n M-h select-pane -L
 bind-key -n M-j select-pane -D
 bind-key -n M-k select-pane -U
 bind-key -n M-l select-pane -R
+
+bind-key -n M-UP select-pane -U
+bind-key -n M-DOWN select-pane -D
+bind-key -n M-LEFT select-pane -L
+bind-key -n M-RIGHT select-pane -R
 
 unbind-key l
 bind-key l last-window
