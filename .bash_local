@@ -53,7 +53,7 @@ check_cloud () {
 set_cloud () {
 	CLOUD=$1
 
-	if [ "$CLOUD" = "hp" -o "$CLOUD" = "hp2" ]; then
+	if [ "$CLOUD" = "hp" -o "$CLOUD" = "hp2" -o "$CLOUD" = "local" ]; then
 		. ~/.hpcloud-rc
 	else
 		. ~/.canonistack/novarc
