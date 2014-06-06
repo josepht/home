@@ -43,10 +43,10 @@ bind-key -n M-J send-keys M-j
 bind-key -n M-K send-keys M-k
 bind-key -n M-L send-keys M-l
 
-bind-key -n M-UP select-pane -U
-bind-key -n M-DOWN select-pane -D
-bind-key -n M-LEFT select-pane -L
-bind-key -n M-RIGHT select-pane -R
+#bind-key -n M-UP select-pane -U
+#bind-key -n M-DOWN select-pane -D
+#bind-key -n M-LEFT select-pane -L
+#bind-key -n M-RIGHT select-pane -R
 
 unbind-key l
 bind-key l last-window
