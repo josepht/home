@@ -1,1 +1,70 @@
-/home/josepht/home/.Xresources_experimental
+xterm*vt100*geometry: 80x32
+xterm*background: gray8
+xterm*foreground: white
+
+!xterm*font: 9x15
+!xterm*font: -*-fixed-*-*-*-*-15-*-*-*-*-*-*-*
+xterm*vt100.translations: #override <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0)
+xterm*metaSendsEscape: true
+
+! terminal colors ------------------------------------------------------------
+!*background: black
+!*foreground: AntiqueWhite
+!! Black (not tango) + DarkGrey
+!*color0:  #000000
+!*color8:  #555753
+
+! DarkRed + Red
+xterm*color1:  #ff6565
+xterm*color9:  #ff8d8d
+
+!! DarkGreen + Green
+!!*color2:  #93d44f
+!!*color10: #c8e7a8
+!
+!! DarkYellow + Yellow
+!!*color3:  #eab93d
+!!*color11: #ffc123
+
+! DarkBlue + Blue
+xterm*color4:  blue
+xterm*color12: DodgerBlue1
+
+! DarkMangenta + Mangenta
+xterm*color5:  PaleVioletRed
+xterm*color13: PaleVioletRed1
+!!DarkCyan + Cyan (both not tango)
+!!*color6:  #89b6e2
+!!*color14: #46a4ff
+!! LightGrey + White
+!!*color7:  #cccccc
+!!*color15: #ffffff
+!
+!
+
+
+!!Blacks
+!*color0: #151515
+!*color8: #505450
+!! Reds
+!*color1: #a60101
+!!*color1: #ff0000
+!*color9: #f99090
+!! Greens
+!*color2: #026802
+!*color10: #a7e14b
+!! Yellows
+!*color3: #ab6e03
+!*color11: #fddc01
+!! Blues
+!*color4: #005faf
+!*color12: #0087ff
+!! Purples
+!*color5: #9c3885
+!*color13: #e628ba
+!! Cyans
+!*color6: #08bab0
+!*color14: #74fff7
+!! Whites
+!*color7: #aaaaaa
+!*color15: #ffffff
