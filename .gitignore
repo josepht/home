@@ -105,3 +105,8 @@ tmp
 *.txt
 *.xz
 .aspell.*
+.dvdcss/
+.dvdrip*
+Videos/
+dvdrip-data/
+junk/
