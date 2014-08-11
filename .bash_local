@@ -55,6 +55,8 @@ set_cloud () {
 
 	if [ "$CLOUD" = "hp" -o "$CLOUD" = "hp2" -o "$CLOUD" = "local" ]; then
 		. ~/.hpcloud-rc
+	elif [ "$CLOUD" = "bootstack" ]; then
+	    . ~/.bootstack.novarc
 	else
 		. ~/.canonistack/novarc
 	fi

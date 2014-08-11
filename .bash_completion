@@ -79,3 +79,22 @@ _get_virsh_domains ()
 }
 
 complete -F _get_virsh_domains virsh
+
+# set_cloud
+_get_juju_envs ()
+{
+	local cur
+	local arg
+	COMPREPLY=()
+
+	cur=${COMP_WORDS[COMP_CWORD]}
+	arg=${COMP_WORDS[COMP_CWORD-1]}
+
+	if [ "${arg}" = "set_cloud" ]; then
+		COMPREPLY=( $(compgen -W "$(python ~/bin/juju_envs.py)" -- ${cur}) )
+	fi
+
+	return 0
+}
+
+complete -F _get_juju_envs set_cloud
