@@ -53,13 +53,18 @@ check_cloud () {
 set_cloud () {
 	CLOUD=$1
 
-	if [ "$CLOUD" = "hp" -o "$CLOUD" = "hp2" -o "$CLOUD" = "local" ]; then
-		. ~/.hpcloud-rc
-	elif [ "$CLOUD" = "bootstack" ]; then
-	    . ~/.bootstack.novarc
-	else
-		. ~/.canonistack/novarc
-	fi
+	case "$CLOUD" in
+		(bootstack*)
+			. ~/.bootstack.novarc
+			;;
+		(hp*)
+		(local) 
+			. ~/.hpcloud-rc
+			;;
+		(*)
+			. ~/.canonistack/novarc
+			;;
+	esac
 	. ~/.lp_creds-rc
 	export JUJU_ENV=$CLOUD
 
