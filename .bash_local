@@ -53,13 +53,31 @@ check_cloud () {
 set_cloud () {
 	CLOUD=$1
 
+	if [ -n "$VENV" ]; then
+		echo "VENV already set to $VENV, aborting..."
+		return 1
+	fi
+
+	if [ -n "$2" ]; then
+		VENV=$2
+	fi
+
 	case "$CLOUD" in
+	    (bootstack-ci-dashboard*)
+			. ~/.bootstack-ci-dashboard-novarc
+			VENV=${VENV:-ci-dash}
+			export PREFIX=ci-dashboard-
+			;;
 		(bootstack*)
 			. ~/.bootstack.novarc
+			export PREFIX=ci-airline-
 			;;
 		(hp*)
-		(local) 
 			. ~/.hpcloud-rc
+			;;
+		(local) 
+			. ~/.bootstack.novarc
+			export PREFIX=ci-airline-
 			;;
 		(*)
 			. ~/.canonistack/novarc
@@ -69,6 +87,9 @@ set_cloud () {
 	export JUJU_ENV=$CLOUD
 
 	check_cloud
+	VENV=${VENV:-uci-engine}
+	workon $VENV
+	unset VENV
 }
 
 PS1='${JUJU_ENV:+[$JUJU_ENV]}${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
