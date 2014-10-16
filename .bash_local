@@ -63,6 +63,11 @@ set_cloud () {
 	fi
 
 	case "$CLOUD" in
+		(bootstack-ci-dashboard*testing)
+			. ~/.bootstack.novarc
+			VENV=${VENV:-ci-dash}
+			export PREFIX=ci-dashboard-
+			;;
 	    (bootstack-ci-dashboard*)
 			. ~/.bootstack-ci-dashboard-novarc
 			VENV=${VENV:-ci-dash}
@@ -87,7 +92,11 @@ set_cloud () {
 	export JUJU_ENV=$CLOUD
 
 	check_cloud
-	VENV=${VENV:-uci-engine}
+	if [ -n "$VIRTUAL_ENV" ]; then
+		VENV=${VENV:-$(basename $VIRTUAL_ENV)}
+	else
+		VENV=${VENV:-uci-engine}
+	fi
 	workon $VENV
 	unset VENV
 }
