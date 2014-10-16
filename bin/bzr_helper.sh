@@ -64,7 +64,7 @@ case "$CMD" in
 
 		BZR_CMD="bzr push $BASE_BZR/$PROJECT_NAME/$NEW_BRANCH_NAME"
 		;;
-	create*)
+	create | create_personal)
 		# create is expected to be run in a project directory (i.e. $HOME/bzr/<project>)
 
 		NEW_BRANCH_NAME=$2
@@ -77,6 +77,9 @@ case "$CMD" in
 
 		PROJECT_NAME=$BRANCH_NAME
 		if [ $CMD = "create_personal" ]; then
+			if [ -z "$2" ]; then
+				usage
+			fi
 			if [ -n "$3" ]; then
 				NEW_BRANCH_NAME=$3
 			fi

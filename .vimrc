@@ -80,6 +80,10 @@ endif
 "abbreviate dl <Esc>O# <Esc>:r!date<CR>kJA - Joe Talbott <joe.talbott@canonical.com>
 iabbr dl # <C-R>=strftime("%c")<CR> Joe Talbott <joe.talbott@canonical.com>
 
+map <leader>t :set noai<CR>0idl<CR><CR>Todo:<CR>  * <CR>Done:<CR>Backlog:<CR><CR><ESC>?Todo:<CR>/  \* /e<CR>:set ai<CR>a
+
+map <leader>y :set paste<CR>ggi-<CR><TAB>date: <C-R>=strftime("%c")<CR><CR><TAB>todo: <CR><TAB>done: <CR><TAB>backlog: <CR><CR><ESC>?todo:?e<CR>:set nopaste<CR>a
+
 map <leader>v :edit ~/.vimrc<CR>
 map <leader>s :source ~/.vimrc<CR>
 
