@@ -48,6 +48,9 @@ bind-key -n M-L send-keys M-l
 #bind-key -n M-LEFT select-pane -L
 #bind-key -n M-RIGHT select-pane -R
 
+bind-key -t vi-copy y copy-pipe 'xclip -in -filter -selection clipboard | xclip -in -selection primary'
+bind-key C-v run-shell "xclip -o -selection clipboard | tmux load-buffer - " \; paste-buffer
+
 unbind-key l
 bind-key l last-window
 
