@@ -29,7 +29,7 @@ iso
 .adobe/
 .android/
 .apport-ignore.xml
-.bazaar/
+.bazaar/lock
 .byobu/
 .check_irssi.dat
 .compiz/
