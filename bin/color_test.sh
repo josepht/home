@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 echo -en "\033[40m\033[31m red\033[0m"
 echo -e "\033[40m\033[1;31m red (bold)\033[0m"
