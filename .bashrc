@@ -111,4 +111,4 @@ fi
 
 export WORKON_HOME=$HOME/environments
 
-setxkbmap -layout us -option ctrl:nocaps
+#setxkbmap -layout us -option ctrl:nocaps
