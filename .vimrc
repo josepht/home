@@ -2,6 +2,12 @@ filetype plugin indent on
 
 colorscheme slate
 
+set shell=bash
+set pastetoggle=<leader>p
+set ttimeoutlen=1000
+
+execute pathogen#infect()
+
 set exrc
 set secure
 set modeline
@@ -15,7 +21,6 @@ set sts=4
 "set expandtab
 set backspace=indent,eol,start
 
-set pastetoggle=<leader>p
 set splitbelow
 
 map <leader>fj <Esc>:%!python -m json.tool<CR>
