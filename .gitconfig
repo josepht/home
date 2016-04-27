@@ -9,3 +9,8 @@
 
 [url "https://www.github.com/"]
 	insteadof = gh:
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	graph = log --oneline --graph
