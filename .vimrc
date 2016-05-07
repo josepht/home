@@ -1,6 +1,10 @@
+set shell=bash
+execute pathogen#infect()
 filetype plugin indent on
+syntax on
 
 colorscheme slate
+
 
 set exrc
 set secure
