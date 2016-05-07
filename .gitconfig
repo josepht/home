@@ -9,9 +9,11 @@
 	insteadof = lpme:
 [url "https://www.github.com/"]
 	insteadof = gh:
+[core]
+	excludesfile = ~/.gitignore-global
 [alias]
-	st = status
-	ci = commit
-	co = checkout
 	br = branch
+	st = status
+	co = checkout
+	ci = commit
 	graph = log --oneline --graph
