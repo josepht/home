@@ -3,3 +3,7 @@
 	name = Joe Talbott
 [push]
 	default = simple
+[url "git+ssh://joetalbott@git.launchpad.net/"]
+	insteadof = lp:
+[url "git+ssh://joetalbott@git.launchpad.net/~joetalbott/+git/"]
+	insteadof = lpme:
