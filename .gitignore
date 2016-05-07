@@ -25,6 +25,12 @@ iso
 .vim/.netrwhist
 .virsh
 
+*.trace
+*.dump
+*novarc*
+django
+charms
+
 .ICEauthority
 .Xauthority
 .adobe/
