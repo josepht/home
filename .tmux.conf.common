@@ -1,10 +1,10 @@
 set -g base-index 1
 set -g pane-base-index 1
 set-option -s escape-time 0
-set-option -s repeat-time 0
+set-option -gs repeat-time 0
 set -g update-environment -r
 
-set-option display-panes-time 300
+set-option -g display-panes-time 300
 set-option -g status-right "\"#22T\" %Y-%m-%d %H:%M"
 set-option -g status-bg green
 set-option -g status-fg black

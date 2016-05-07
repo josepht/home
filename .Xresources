@@ -30,8 +30,10 @@ xterm*color9:  #ff8d8d
 !!*color11: #ffc123
 
 ! DarkBlue + Blue
-xterm*color4:  #00d7ff
-xterm*color12: #00afff
+! xterm*color4:  #00d7ff
+! xterm*color12: #00afff
+xterm*color4:  #0087d7
+xterm*color12: DodgerBlue1
 
 ! DarkMangenta + Mangenta
 xterm*color5:  PaleVioletRed

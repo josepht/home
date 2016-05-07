@@ -1,21 +1,5 @@
-export PATH=$PATH:$HOME/bin
-export EDITOR=vim
-
-export PYTHONPATH=$HOME/lib/python
-
-alias py25=python2.5
-export PYTHONSTARTUP=$HOME/.pystartup
-
-export PYLIB=$HOME/lib/python
-
-#if [ "$TERM" = "xterm" -o "$TERM" = "xterm-color" -o "$TERM" = "xterms" -o "$TERM" = "screen" ]; then
-#	export PROMPT_COMMAND='echo -ne "\033]0;${SCREENTITLE}${USER}@${HOSTNAME} \007"'
-#fi
-
 export DEBFULLNAME="Joe Talbott"
 export DEBEMAIL="joe.talbott@canonical.com"
-
-alias vm-start="vm-start -v"
 
 debug_rc () {
 	OUTPUT=$(env | grep 'OS_')
@@ -103,5 +87,4 @@ set_cloud () {
 
 PS1='${JUJU_ENV:+[$JUJU_ENV]}${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 export GPGKEY=A4723EF7
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
+export SSH_LOCAL_HOSTS='^(cedar|maple|poplar)$'

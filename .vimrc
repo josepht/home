@@ -1,10 +1,13 @@
-set shell=bash
-execute pathogen#infect()
 filetype plugin indent on
 syntax on
 
 colorscheme slate
 
+set shell=bash
+set pastetoggle=<leader>p
+set ttimeoutlen=1000
+
+execute pathogen#infect()
 
 set exrc
 set secure
@@ -19,7 +22,6 @@ set sts=4
 "set expandtab
 set backspace=indent,eol,start
 
-set pastetoggle=<leader>p
 set splitbelow
 
 map <leader>fj <Esc>:%!python -m json.tool<CR>
