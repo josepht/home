@@ -102,13 +102,18 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+# personal stuff
+export PATH=$PATH:$HOME/bin
+export EDITOR=vim
+export PYTHONSTARTUP=$HOME/.pystartup
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+export WORKON_HOME=$HOME/environments
 
 # sources ~/.bash_local
 LOCAL_BASHRC=$HOME/.bash_local
 if [ -f $LOCAL_BASHRC ]; then
     . $LOCAL_BASHRC
 fi
-
-export WORKON_HOME=$HOME/environments
 
 #setxkbmap -layout us -option ctrl:nocaps
