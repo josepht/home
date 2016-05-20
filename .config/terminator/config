@@ -1,0 +1,30 @@
+[global_config]
+  inactive_color_offset = 0.73
+  title_transmit_bg_color = "#ff6379"
+[keybindings]
+  broadcast_all = <Shift><Alt>a
+  broadcast_group = <Shift><Alt>g
+  broadcast_off = <Shift><Alt>o
+  layout_launcher = <Primary><Shift><Alt>l
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_image = None
+    copy_on_selection = True
+    cursor_color = "#d0d0d0"
+    foreground_color = "#dcdcdc"
+    palette = "#000000:#c68888:#80dd29:#c4a000:#75acf2:#e28fef:#88d8da:#d3d7cf:#949792:#ff4e40:#c2fb8a:#fce94f:#d7e5f4:#eac1e6:#b8fdfd:#eeeeec"
+  [[maple]]
+    background_color = "#ffffdd"
+    background_image = None
+    font = Sans 10
+    foreground_color = "#000000"
+    scrollback_infinite = True

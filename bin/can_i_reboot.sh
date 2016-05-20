@@ -1,8 +1,17 @@
 #!/bin/sh
+VM_COUNT=0
 
-VM_COUNT=$(virsh list | grep -i running | wc -l)
-LXD_COUNT=$(lxc list | grep -i running | wc -l)
-LXC_COUNT=$(sudo lxc-ls -f | grep -i running | wc -l)
+if which virsh 2>&1 >/dev/null; then
+	VM_COUNT=$(virsh list | grep -i running | wc -l)
+fi
+
+if which lxc 2>&1 >/dev/null; then
+	LXD_COUNT=$(lxc list 2>/dev/null | grep -i running | wc -l)
+fi
+
+if which lxc-ls 2>&1 >/dev/null; then
+	LXC_COUNT=$(sudo lxc-ls -f 2>/dev/null | grep -i running | wc -l)
+fi
 
 
 if [ $((VM_COUNT+LXD_COUNT+LXC_COUNT)) -eq 0 ]; then
