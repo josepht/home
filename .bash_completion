@@ -65,8 +65,8 @@ _get_virsh_domains ()
 	cur=${COMP_WORDS[COMP_CWORD]}
 	arg=${COMP_WORDS[COMP_CWORD-1]}
 
-	if [ "${arg}" = "virsh" ]; then
-		COMPREPLY=( $(compgen -W "start stop edit dumpxml" -- ${cur}) )
+	if [ "${arg}" = "virsh" -o "${arg}" = "help" ]; then
+		COMPREPLY=( $(compgen -W "$(virsh -h | grep -E '^    [a-zA-Z]' | tr -s ' ' ' ' | sed 's/^ \([^ ]\+\) .*/\1/')" -- ${cur}) )
 	elif [ "${arg}" = "stop" ]; then
 		COMPREPLY=( $(compgen -W "$(virsh -q list | tr -s ' ' | cut -d ' ' -f3)" -- ${cur}) )
 	elif [ "${arg}" = "start" ]; then

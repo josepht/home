@@ -16,9 +16,9 @@ set showmode
 set cedit=
 set ai
 "set textwidth=70
-set ts=4
-set sw=4
-set sts=4
+set ts=8
+set sw=8
+set sts=8
 "set expandtab
 set backspace=indent,eol,start
 
@@ -49,8 +49,21 @@ if &t_Co > 2 || has("qui_running")
     syntax on
 endif
 
-set viminfo='20,\"50    " read/write a .viminfo file, don't store more
-                        " than 50 lines of registers
+"set viminfo='20,\"50    " read/write a .viminfo file, don't store more
+"                        " than 50 lines of registers
+
+" pathogen will load the other modules
+execute pathogen#infect()
+
+" we want to tell the syntastic module when to run
+" we want to see code highlighting and checks when we open a file
+" but we don't care so much that it reruns when we close the file
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" tell vim to allow you to copy between files, remember your cursor
+" postition and other little nice things like that
+set viminfo='100,\"2500,:200,%,n~/.viminfo
 set history=50          " keep 50 lines of command line history
 set ruler               " show the cursor position all the time
 
@@ -79,10 +92,16 @@ if has("autocmd")
 	"autocmd BufEnter *.py map <leader>gd <Esc>?^\s*def\s?e<CR>w
 	"autocmd BufEnter *.py map <leader>gi <Esc>mZ<leader>gd"zyiw?^\s*class\s?e<CR>w"xyw`Z:exe "!make itest ITEST_PATH=%:".@x.".".@z." DEBUG=1"<CR>
 	autocmd BufNewFile,BufRead *.run,t[cs]_control set filetype=yaml
+
+    " Less indentation for Go code.
+    autocmd BufEnter *.go set sw=4 ts=4 softtabstop=4
+
+    " get rid of trailing whitespace on save
+    autocmd BufWritePre * :%s/\s\+$//e
 endif
 
 "abbreviate ll logging.info(("JAT"))<Left><Left>
-"abbreviate cl window.console and console.log and console.log 
+"abbreviate cl window.console and console.log and console.log
 "abbreviate dl <Esc>O# <Esc>:r!date<CR>kJA - Joe Talbott <joe.talbott@canonical.com>
 iabbr dl # <C-R>=strftime("%c")<CR> Joe Talbott <joe.talbott@canonical.com>
 
