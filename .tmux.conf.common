@@ -5,7 +5,7 @@ set-option -gs repeat-time 0
 set -g update-environment -r
 
 set-option -g display-panes-time 300
-set-option -g status-right "\"#22T\" %Y-%m-%d %H:%M"
+#set-option -g status-right "%Y-%m-%d %H:%M"
 set-option -g status-bg green
 set-option -g status-fg black
 set-option -g pane-border-bg black
