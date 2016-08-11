@@ -146,9 +146,12 @@ bindsym $mod+r mode "resize"
 
 bindsym $mod+x exec xautolock -locknow
 bindsym Mod1+Tab focus right
+bindsym Mod1+Shift+Tab focus left
+bindsym $mod+Tab focus right
+bindsym $mod+Shift+Tab focus left
 
 exec --no-startup-id "python /home/josepht/proj/python/rabbit_notify_indicator.py"
-exec --no-startup-id "xautolock -locker 'i3lock -c 000000'  -time 1 -bell 100 -notify 10"
+exec --no-startup-id "xautolock -locker 'i3lock -c 000000'  -time 10 -bell 100 -notify 5"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
