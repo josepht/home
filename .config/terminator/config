@@ -21,7 +21,7 @@
     copy_on_selection = True
     cursor_color = "#d0d0d0"
     foreground_color = "#dcdcdc"
-    palette = "#000000:#c68888:#80dd29:#c4a000:#75acf2:#e28fef:#88d8da:#d3d7cf:#949792:#ff4e40:#c2fb8a:#fce94f:#d7e5f4:#eac1e6:#b8fdfd:#eeeeec"
+    palette = "#000000:#c68888:#80dd29:#c4a000:#75acf2:#e28fef:#88d8da:#ffffff:#949792:#ff4e40:#c2fb8a:#fce94f:#d7e5f4:#eac1e6:#b8fdfd:#fafafa"
   [[maple]]
     background_color = "#ffffdd"
     background_image = None
