@@ -116,4 +116,4 @@ if [ -f $LOCAL_BASHRC ]; then
     . $LOCAL_BASHRC
 fi
 
-#setxkbmap -layout us -option ctrl:nocaps
+# setxkbmap -layout us -option ctrl:nocaps
