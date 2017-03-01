@@ -1,5 +1,36 @@
-# file: vm-tools.completion
+# file: .bash_completion
 #
+
+_get_snapcraft_test_types ()
+{
+	local cur
+	COMPREPLY=()
+
+	cur=${COMP_WORDS[COMP_CWORD]}
+	prev=${COMP_WORDS[COMP_CWORD-1]}
+
+	opts="static unit integration demos"
+
+	case "$prev" in
+	unit)
+		test_files=$(find snapcraft/tests -name 'test_*.py' -exec basename {} \;)
+		COMPREPLY=( $(compgen -W "$test_files" -- $cur))
+		return 0
+		;;
+	integration)
+		test_files=$(find integration_tests -name 'test_*.py' -exec basename {} \;)
+		COMPREPLY=( $(compgen -W "$test_files" -- $cur))
+		return 0
+		;;
+	*)
+		;;
+	esac
+
+	COMPREPLY=($(compgen -W "$opts" -- $cur))
+
+	return 0
+}
+complete -F _get_snapcraft_test_types runtests.sh
 
 _get_vms_running ()
 {
