@@ -84,7 +84,7 @@ endif
 "abbreviate ll logging.info(("JAT"))<Left><Left>
 "abbreviate cl window.console and console.log and console.log 
 "abbreviate dl <Esc>O# <Esc>:r!date<CR>kJA - Joe Talbott <joe.talbott@canonical.com>
-iabbr dl # <C-R>=strftime("%c")<CR> Joe Talbott <joe.talbott@canonical.com>
+iabbr dl # <C-R>=strftime("%c")<CR> Joe Talbott <joseph.talbott@broadcom.com>
 
 map <leader>t :set noai<CR>0idl<CR><CR>Todo:<CR>  * <CR>Done:<CR>Backlog:<CR><CR><ESC>?Todo:<CR>/  \* /e<CR>:set ai<CR>a
 

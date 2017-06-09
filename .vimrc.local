@@ -6,7 +6,7 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 
-iabbr dl # <C-R>=strftime("%c")<CR> Joe Talbott <joe.talbott@canonical.com>
+iabbr dl # <C-R>=strftime("%c")<CR> Joe Talbott <joseph.talbott@broadcom.com>
 let g:indent_guides_enable_on_vim_startup = 0
 set foldlevel=9
 
