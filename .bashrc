@@ -117,3 +117,11 @@ if [ -f $LOCAL_BASHRC ]; then
 fi
 
 # setxkbmap -layout us -option ctrl:nocaps
+alias ls='ls -G'
+
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+. $(brew --prefix)/etc/bash_completion
+fi
+
+alias tclsh='rlwrap tclsh'
+alias byobu='~/byobu.sh'   # set up ssh-agent before starting byobu
