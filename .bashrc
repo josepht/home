@@ -119,9 +119,13 @@ fi
 # setxkbmap -layout us -option ctrl:nocaps
 alias ls='ls -G'
 
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-. $(brew --prefix)/etc/bash_completion
+if which brew; then
+    if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+    fi
 fi
 
 alias tclsh='rlwrap tclsh'
-alias byobu='~/byobu.sh'   # set up ssh-agent before starting byobu
+if [ -f ~/bin/byobu.sh ];then
+    alias byobu='~/bin/byobu.sh'   # set up ssh-agent before starting byobu
+fi
