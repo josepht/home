@@ -61,3 +61,5 @@ bind '"' split-window
 
 unbind-key "'"
 bind "'" choose-window
+
+set -g default-command /bin/bash
