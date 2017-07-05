@@ -129,3 +129,9 @@ alias tclsh='rlwrap tclsh'
 if [ -f ~/bin/byobu.sh ];then
     alias byobu='~/bin/byobu.sh'   # set up ssh-agent before starting byobu
 fi
+
+export PATH=~/.local/bin:$PATH
+
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    . /usr/local/bin/virtualenvwrapper.sh
+fi
