@@ -23,7 +23,7 @@ tmux resize-pane -y 10
 setup_pane
 
 # start the development server
-tmux send-keys -l 'make start'
+tmux send-keys -l 'make start ADDR=0.0.0.0:8000'
 tmux send-keys Enter
 
 tmux select-pane -U
