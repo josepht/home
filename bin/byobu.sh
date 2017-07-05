@@ -1,3 +1,3 @@
 #!/bin/sh
 
-ssh-agent bash -c 'ssh-add; byobu;'
+ssh-agent bash -c 'ssh-add; byobu $@;'
