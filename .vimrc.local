@@ -20,3 +20,10 @@ let g:autoclose_on = 0
 let g:AutoPairs = {}
 
 set mouse-=a
+
+map <leader>t :!python doctest %<CR>
+map <leader>r :!python %<CR>
+map <leader>R :!python3 %<CR>
+map <leader>d oprint("JOE: <C-R>": {}".format(<C-R>"))<Esc>
+
+set pastetoggle=<leader>p
