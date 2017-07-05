@@ -13,3 +13,10 @@ set foldlevel=9
 let g:syntastic_python_pyflakes_exe = 'python3 -m pyflakes'
 let g:syntastic_python_flake8_exe = 'python3 -m flake8'
 let g:syntastic_python_python_exec = '/usr/bin/python3'
+
+let $PYTHONHOME='/System/Library/Frameworks/Python.framework/Versions/Current'
+
+let g:autoclose_on = 0
+let g:AutoPairs = {}
+
+set mouse-=a
