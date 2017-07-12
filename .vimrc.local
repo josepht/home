@@ -27,3 +27,6 @@ map <leader>R :!python3 %<CR>
 map <leader>d oprint("JOE: <C-R>": {}".format(<C-R>"))<Esc>
 
 set pastetoggle=<leader>p
+
+set textwidth=80
+set colorcolum=+1
