@@ -30,5 +30,4 @@ map <leader>d oprint("JOE: <C-R>": {}".format(<C-R>"))<Esc>
 
 set pastetoggle=<leader>p
 
-set textwidth=80
-set colorcolumn=+1
+set cc=80
