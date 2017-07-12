@@ -117,3 +117,35 @@ if [ -f $LOCAL_BASHRC ]; then
 fi
 
 # setxkbmap -layout us -option ctrl:nocaps
+alias ls='ls -G'
+
+if which brew >/dev/null; then
+    if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+    fi
+fi
+
+alias tclsh='rlwrap tclsh'
+if [ -f ~/bin/byobu.sh ];then
+    alias byobu='~/bin/byobu.sh'   # set up ssh-agent before starting byobu
+fi
+
+export PATH=~/.local/bin:$PATH
+
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    . /usr/local/bin/virtualenvwrapper.sh
+fi
+
+if [ -n "$VIRTUAL_ENV" ]; then
+    PS1="($(basename $VIRTUAL_ENV)) $PS1"
+fi
+
+function project() {
+    PROJECT=${1:-qa-dashboard}
+    PROJECT_PATH="$HOME/src/git/$PROJECT"
+
+    if [ -d "$PROJECT_PATH" ]; then
+        cd $PROJECT_PATH
+        pipenv shell
+    fi
+}
