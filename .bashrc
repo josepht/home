@@ -139,3 +139,13 @@ fi
 if [ -n "$VIRTUAL_ENV" ]; then
     PS1="($(basename $VIRTUAL_ENV)) $PS1"
 fi
+
+function project() {
+    PROJECT=${1:-qa-dashboard}
+    PROJECT_PATH="$HOME/src/git/$PROJECT"
+
+    if [ -d "$PROJECT_PATH" ]; then
+        cd $PROJECT_PATH
+        pipenv shell
+    fi
+}
