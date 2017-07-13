@@ -16,7 +16,7 @@ Plugin 'klen/python-mode'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'jnurmine/Zenburn'
 "Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-fugitive'
@@ -95,7 +95,7 @@ endif
 
 set viminfo='20,\"50    " read/write a .viminfo file, don't store more
                         " than 50 lines of registers
-set history=50          " keep 50 lines of command line history
+set history=5000        " keep 5000 lines of command line history
 set ruler               " show the cursor position all the time
 
 " Only do this part when compiled with support for autocommands
@@ -110,7 +110,7 @@ if has("autocmd")
 
 	autocmd BufWritePost ~/.vimrc source ~/.vimrc
     autocmd FileType make setlocal noexpandtab
-    autocmd BufEnter *.html set ai sw=2 ts=2 expandtab softtabstop=2 smarttab
+    "autocmd BufEnter *.html set ai sw=2 ts=2 expandtab softtabstop=2 smarttab
 	autocmd BufNewFile,BufRead *.run,t[cs]_control set filetype=yaml
 endif
 
@@ -140,3 +140,4 @@ set number
 set backupdir=~/.vimbackup//
 set directory=~/.vimbackup//
 let g:pymode_rope=0
+set encoding=utf-8
