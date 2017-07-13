@@ -130,7 +130,7 @@ if [ -f ~/bin/byobu.sh ];then
     alias byobu='~/bin/byobu.sh'   # set up ssh-agent before starting byobu
 fi
 
-export PATH=~/.local/bin:$PATH
+#export PATH=~/.local/bin:$PATH
 
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     . /usr/local/bin/virtualenvwrapper.sh
@@ -139,6 +139,8 @@ fi
 if [ -n "$VIRTUAL_ENV" ]; then
     PS1="($(basename $VIRTUAL_ENV)) $PS1"
 fi
+
+export PATH=/usr/local:/usr/local/bin:$PATH
 
 function project() {
     PROJECT=${1:-qa-dashboard}
