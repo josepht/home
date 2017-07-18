@@ -63,3 +63,5 @@ unbind-key "'"
 bind "'" choose-window
 
 set -g default-command /bin/bash
+
+set -g default-terminal "screen-256color"
