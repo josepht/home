@@ -1,1 +1,1 @@
-/Users/jt889304/.spf13-vim-3/.vimrc
+/Users/jt889304/.vimrc-joe
