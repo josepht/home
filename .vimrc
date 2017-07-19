@@ -1,1 +1,1 @@
-/Users/jt889304/.vimrc-joe
+/home/josepht/.vimrc-joe
