@@ -7,9 +7,6 @@
 !*.py
 !bin/
 !bin/*
-!.vim/
-!.vim/*
 !.vim-joe/
 !.vim-joe/*
-!.vimrc
 !.vimrc-joe
