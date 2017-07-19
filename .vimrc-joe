@@ -47,7 +47,7 @@ let mapleader=','
 let python_highlight_all=1  " syntastic ?
 syntax on
 
-colorscheme peaksea
+colorscheme jellybeans
 
 set shell=bash
 set pastetoggle=<leader>p
