@@ -10,3 +10,10 @@
 !.vim-joe/
 !.vim-joe/*
 !.vimrc-joe
+!.byobu/
+!.byobu/*
+
+.byobu/.screenrc
+.byobu/.ssh-agent
+.byobu/.welcome-displayed
+
