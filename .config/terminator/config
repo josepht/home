@@ -31,7 +31,7 @@
     scrollback_infinite = True
   [[maximus]]
     audible_bell = True
-    background_color = "#191a21"
+    background_color = "#060710"
     background_image = None
     copy_on_selection = True
     cursor_color = "#ede8e8"
