@@ -7,13 +7,23 @@ map <c-l> <c-w>l
 map <c-h> <c-w>h
 map <leader>w ologging.warning("JOE: <C-R>": {}".format(<C-R>"))<ESC>
 
-iabbr dl # <C-R>=strftime("%c")<CR> Joe Talbott <joe.talbott@canonical.com>
+iabbr dl # <C-R>=strftime("%c")<CR> Joe Talbott <joetalbott@gmail.com>
 let g:indent_guides_enable_on_vim_startup = 0
-set foldlevel=9
+set foldlevel=99
 
-let g:syntastic_python_pyflakes_exe = 'python3 -m pyflakes'
-let g:syntastic_python_flake8_exe = 'python3 -m flake8'
-let g:syntastic_python_python_exec = '/usr/bin/python3'
 let g:AutoPairs = {}
 set mouse=""
 let g:spf13_no_autochdir = 1
+set pastetoggle=<leader>p
+
+"let g:syntastic_python_pyflakes_exe = 'python3 -m pyflakes'
+"let g:syntastic_python_flake8_exe = 'python3 -m flake8'
+"let g:syntastic_python_python_exec = '/usr/bin/python3'
+
+"let $PYTHONHOME='/System/Library/Frameworks/Python.framework/Versions/Current'
+
+let g:autoclose_on = 0
+let g:AutoPairs = {}
+
+set cc=80
+>>>>>>> 4925520d24e58f57a5f57f230860a5c08864625a

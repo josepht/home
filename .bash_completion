@@ -129,3 +129,17 @@ _get_juju_envs ()
 }
 
 complete -F _get_juju_envs set_cloud
+
+_get_projects ()
+{
+    local cur
+    COMPREPLY=()
+
+    cur=${COMP_WORDS[COMP_CWORD]}
+
+    COMPREPLY=( $(compgen -W "$(ls ~/src/git/)" -- ${cur}) )
+
+    return 0
+
+}
+complete -F _get_projects project

@@ -1,0 +1,150 @@
+set nocompatible
+filetype off
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'scrooloose/syntastic'
+Plugin 'nvie/vim-flake8'
+Plugin 'klen/python-mode'
+"Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'vim-scripts/indentpython.vim'
+"Plugin 'Valloric/YouCompleteMe'
+Plugin 'jnurmine/Zenburn'
+"Plugin 'altercation/vim-colors-solarized'
+Plugin 'tpope/vim-fugitive'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just
+" :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to
+" auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+let mapleader=','
+let python_highlight_all=1  " syntastic ?
+syntax on
+
+colorscheme jellybeans
+
+set shell=bash
+set pastetoggle=<leader>p
+set ttimeoutlen=1000
+
+"JOEexecute pathogen#infect()
+
+set exrc
+set secure
+set modeline
+set showmode
+set cedit=
+set ai
+"set textwidth=70
+set ts=4
+set sw=4
+set sts=4
+"set expandtab
+set backspace=indent,eol,start
+
+set splitbelow
+
+map <leader>fj <Esc>:%!python -m json.tool<CR>
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
+
+"set tags=/usr/src/sys/platform/pc32/tags
+"cs add /home/josepht/cscope.out
+if has("cscope")
+    set cst
+    set nocsverb
+    if filereadable("cscope.out")
+        cs add cscope.out
+    elseif $CSCOPE_DB != ""
+        cs add $CSCOPE_DB
+        else
+        cs add /home/josepht/cscope.out
+    endif
+    set csverb
+endif
+
+if &t_Co > 2 || has("qui_running")
+    syntax on
+endif
+
+set viminfo='20,\"50    " read/write a .viminfo file, don't store more
+                        " than 50 lines of registers
+set history=5000        " keep 5000 lines of command line history
+set ruler               " show the cursor position all the time
+
+" Only do this part when compiled with support for autocommands
+if has("autocmd")
+  " In text files, always limit the width of text to 78 characters
+  autocmd BufRead *.txt set tw=78
+  " When editing a file, always jump to the last cursor position
+  autocmd BufReadPost *
+  \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+  \   exe "normal! g'\"" |
+  \ endif
+
+	autocmd BufWritePost ~/.vimrc source ~/.vimrc
+    autocmd FileType make setlocal noexpandtab
+    "autocmd BufEnter *.html set ai sw=2 ts=2 expandtab softtabstop=2 smarttab
+	autocmd BufNewFile,BufRead *.run,t[cs]_control set filetype=yaml
+endif
+
+inoremap <leader>dl # <C-R>=strftime("%c")<CR> Joe Talbott <joseph.talbott@broadcom.com><CR>
+map <leader>t :set noai<CR>0idl<CR><CR>Todo:<CR>  * <CR>Done:<CR>Backlog:<CR><CR><ESC>?Todo:<CR>/  \* /e<CR>:set ai<CR>a
+
+map <leader>y :set paste<CR>ggi-<CR><TAB>date: <C-R>=strftime("%c")<CR><CR><TAB>todo: <CR><TAB>done: <CR><TAB>backlog: <CR><CR><ESC>?todo:?e<CR>:set nopaste<CR>a
+
+map <leader>v :edit ~/.vimrc<CR>
+map <leader>s :source ~/.vimrc<CR>
+
+nmap <M-Left> :bprev<CR>
+nmap <M-Right> :bnext<CR>
+
+highlight Comment ctermfg=2
+
+if $TMUX == ''
+	set clipboard+=unnamed
+endif
+
+nnoremap H gT
+nnoremap L gt
+set cc=80
+
+set foldmethod=indent
+set foldlevel=99
+nnoremap <space> za
+set number
+
+set backupdir=~/.vimbackup//
+set directory=~/.vimbackup//
+let g:pymode_rope=0
+set encoding=utf-8
+
+let g:airline_theme='badwolf'
