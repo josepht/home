@@ -20,7 +20,7 @@
     background_image = None
     copy_on_selection = True
     cursor_color = "#d0d0d0"
-    foreground_color = "#dcdcdc"
+    foreground_color = "#ffffff"
     palette = "#000000:#c68888:#80dd29:#c4a000:#75acf2:#e28fef:#88d8da:#ffffff:#949792:#ff4e40:#c2fb8a:#fce94f:#d7e5f4:#eac1e6:#b8fdfd:#fafafa"
   [[maple]]
     background_color = "#ffffdd"
