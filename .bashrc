@@ -111,7 +111,6 @@ export PATH=$PATH:$GOPATH/bin
 export WORKON_HOME=$HOME/environments
 
 # setxkbmap -layout us -option ctrl:nocaps
-alias ls='ls -G'
 
 if which brew >/dev/null; then
     if [ -f $(brew --prefix)/etc/bash_completion ]; then
@@ -135,8 +134,8 @@ if [ -n "$VIRTUAL_ENV" ]; then
 fi
 
 export PATH=/usr/local:/usr/local/bin:$PATH
-
-export VENV_TYPE=pipenv
+# virtualenv or pipenv
+export VENV_TYPE=virtualenvwrapper
 
 
 function project() {
@@ -153,11 +152,11 @@ function project() {
 	if [ "$VENV_TYPE" = "pipenv" ]; then
 		pipenv shell
 	else
-		source $PROJECT_VENV/bin/activate
+		workon $PROJECT
 	fi
 }
 
-function project_create() {
+function create_project() {
     PROJECT=${1:-qa-dashboard}
 	shift
     PROJECT_PATH="$HOME/src/git/$PROJECT"
@@ -173,7 +172,7 @@ function project_create() {
 		pipenv $@ install --dev
 	else
 		if [ ! -d "$PROJECT_VENV" ]; then
-			virtualenv $@ $PROJECT_VENV
+			mkvirtualenv $@ $PROJECT
 		fi
 	fi
 }
