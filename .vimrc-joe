@@ -23,6 +23,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'othree/es.next.syntax.vim'
 
 
 " All of your Plugins must be added before the following line
@@ -47,7 +48,9 @@ let mapleader=','
 let python_highlight_all=1  " syntastic ?
 syntax on
 
-colorscheme jellybeans
+set t_Co=256
+set background=dark
+colorscheme ir_black
 
 set shell=bash
 set pastetoggle=<leader>p
@@ -117,7 +120,7 @@ if has("autocmd")
 endif
 
 inoremap <leader>dl # <C-R>=strftime("%c")<CR> Joe Talbott <joseph.talbott@broadcom.com><CR>
-map <leader>t :set noai<CR>0idl<CR><CR>Todo:<CR>  * <CR>Done:<CR>Backlog:<CR><CR><ESC>?Todo:<CR>/  \* /e<CR>:set ai<CR>a
+map <leader>T :set noai<CR>0idl<CR><CR>Todo:<CR>  * <CR>Done:<CR>Backlog:<CR><CR><ESC>?Todo:<CR>/  \* /e<CR>:set ai<CR>a
 
 map <leader>y :set paste<CR>ggi-<CR><TAB>date: <C-R>=strftime("%c")<CR><CR><TAB>todo: <CR><TAB>done: <CR><TAB>backlog: <CR><CR><ESC>?todo:?e<CR>:set nopaste<CR>a
 
@@ -133,8 +136,9 @@ if $TMUX == ''
 	set clipboard+=unnamed
 endif
 
-nnoremap H gT
-nnoremap L gt
+set hidden
+nnoremap H :bprev<CR>
+nnoremap L :bnext<CR>
 set cc=80
 
 set foldmethod=indent
@@ -145,6 +149,12 @@ set number
 set backupdir=~/.vimbackup//
 set directory=~/.vimbackup//
 let g:pymode_rope=0
+let g:pymode_run_bind=''
+let g:pymode_run = 0
 set encoding=utf-8
 
 let g:airline_theme='badwolf'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+set tabpagemax=20
