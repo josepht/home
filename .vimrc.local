@@ -5,11 +5,15 @@ map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
+map <leader>w ologging.warning("JOE: <C-R>": {}".format(<C-R>"))<ESC>
 
 iabbr dl # <C-R>=strftime("%c")<CR> Joe Talbott <joetalbott@gmail.com>
 let g:indent_guides_enable_on_vim_startup = 0
 set foldlevel=99
 
+let g:AutoPairs = {}
+set mouse=""
+let g:spf13_no_autochdir = 1
 set pastetoggle=<leader>p
 
 "let g:syntastic_python_pyflakes_exe = 'python3 -m pyflakes'
@@ -21,13 +25,5 @@ set pastetoggle=<leader>p
 let g:autoclose_on = 0
 let g:AutoPairs = {}
 
-set mouse-=a
-
-map <leader>t :!python doctest %<CR>
-map <leader>r :!python %<CR>
-map <leader>R :!python3 %<CR>
-map <leader>f :!flake8 %<CR>
-map <leader>d oprint("JOE: <C-R>": {}".format(<C-R>"))<Esc>
-map <leader>v :!pipenv run python %<CR>
-
 set cc=80
+>>>>>>> 4925520d24e58f57a5f57f230860a5c08864625a

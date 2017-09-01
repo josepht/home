@@ -1,1 +1,0 @@
-/home/josepht/.vim-joe
