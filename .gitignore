@@ -10,6 +10,8 @@
 !.vim-joe/
 !.vim-joe/*
 !.vimrc-joe
+!.vimrc
+!.vim
 !.byobu/
 !.byobu/*
 
