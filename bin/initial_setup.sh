@@ -1,4 +1,6 @@
 #!/bin/bash
 
-sudo apt install vim vim-pathogen git bzr byobu tmux bash-completion command-not-found
-mkdir -p ~/src/{bzr,git}
+sudo apt install vim git byobu tmux bash-completion command-not-found
+mkdir -p ~/src/git
+
+gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
