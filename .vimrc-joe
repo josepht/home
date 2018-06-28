@@ -130,6 +130,8 @@ map <leader>s :source ~/.vimrc<CR>
 nmap <M-Left> :bprev<CR>
 nmap <M-Right> :bnext<CR>
 
+map <leader>cl oconsole.log("JOE: <C-R>": ", <C-R>");<ESC>
+
 highlight Comment ctermfg=2
 
 if $TMUX == ''

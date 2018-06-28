@@ -13,7 +13,7 @@
 	excludesfile = ~/.gitignore-global
 [alias]
 	br = branch
-	st = status
+	st = status --short --branch
 	co = checkout
 	ci = commit
 	graph = log --oneline --graph
