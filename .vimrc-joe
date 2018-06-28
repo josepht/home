@@ -146,8 +146,8 @@ set foldlevel=99
 nnoremap <space> za
 set number
 
-set backupdir=~/.vimbackup//
-set directory=~/.vimbackup//
+set backupdir=~/.vimbackup/
+set directory=~/.vimbackup/
 let g:pymode_rope=0
 let g:pymode_run_bind=''
 let g:pymode_run = 0
