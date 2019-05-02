@@ -119,9 +119,9 @@ if which brew >/dev/null; then
 fi
 
 alias tclsh='rlwrap tclsh'
-if [ -f ~/bin/byobu.sh ];then
-    alias byobu='~/bin/byobu.sh'   # set up ssh-agent before starting byobu
-fi
+#if [ -f ~/bin/byobu.sh ];then
+#   alias byobu='~/bin/byobu.sh'   # set up ssh-agent before starting byobu
+#fi
 
 export PATH=~/.local/bin:$PATH
 
