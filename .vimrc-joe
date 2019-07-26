@@ -120,6 +120,9 @@ if has("autocmd")
 endif
 
 inoremap <leader>dl # <C-R>=strftime("%c")<CR> Joe Talbott <joseph.talbott@broadcom.com><CR>
+inoremap <leader>dp # <C-R>=strftime("%c")<CR> Joe Talbott <joetalbott@gmail.com><CR>
+
+inoremap <leader>je # <C-R>=strftime("%c")<CR> Joe Talbott <joetalbott@gmail.com><CR>---------------------------------------<CR><CR><CR><ESC>kki
 map <leader>T :set noai<CR>0idl<CR><CR>Todo:<CR>  * <CR>Done:<CR>Backlog:<CR><CR><ESC>?Todo:<CR>/  \* /e<CR>:set ai<CR>a
 
 map <leader>y :set paste<CR>ggi-<CR><TAB>date: <C-R>=strftime("%c")<CR><CR><TAB>todo: <CR><TAB>done: <CR><TAB>backlog: <CR><CR><ESC>?todo:?e<CR>:set nopaste<CR>a
