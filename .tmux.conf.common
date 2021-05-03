@@ -19,6 +19,7 @@ set-window-option -g automatic-rename off
 set-window-option -g window-status-style bg=green,fg=black
 set-window-option -g window-status-current-style bg=black,fg=white,none
 set-window-option -g window-status-activity-style bg=yellow,fg=black,none
+set-window-option -g mode-keys vi
 set -g message-style bg=yellow,fg=black
 
 set -g prefix C-b
