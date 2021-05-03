@@ -119,7 +119,7 @@ if has("autocmd")
 	autocmd BufNewFile,BufRead *.run,t[cs]_control set filetype=yaml
 endif
 
-inoremap <leader>dl # <C-R>=strftime("%c")<CR> Joe Talbott <joseph.talbott@broadcom.com><CR>
+inoremap <leader>dl # <C-R>=strftime("%c")<CR> Joe Talbott <jsimmons-talbott@redhat.com><CR>
 inoremap <leader>dp # <C-R>=strftime("%c")<CR> Joe Talbott <joetalbott@gmail.com><CR>
 
 inoremap <leader>je # <C-R>=strftime("%c")<CR> Joe Talbott <joetalbott@gmail.com><CR>---------------------------------------<CR><CR><CR><ESC>kki
