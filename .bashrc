@@ -112,7 +112,7 @@ export WORKON_HOME=$HOME/environments
 
 # setxkbmap -layout us -option ctrl:nocaps
 
-if which brew >/dev/null; then
+if which brew &>/dev/null; then
     if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
     fi
@@ -183,3 +183,5 @@ LOCAL_BASHRC=$HOME/.bash_local
 if [ -f $LOCAL_BASHRC ]; then
     . $LOCAL_BASHRC
 fi
+
+ssh-add -l &>/dev/null || eval `ssh-agent` &>/dev/null  # start ssh-agent if not present
