@@ -17,3 +17,5 @@
 	co = checkout
 	ci = commit
 	graph = log --oneline --graph
+[pull]
+	rebase = true
