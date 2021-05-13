@@ -184,4 +184,8 @@ if [ -f $LOCAL_BASHRC ]; then
     . $LOCAL_BASHRC
 fi
 
-ssh-add -l &>/dev/null || eval `ssh-agent` &>/dev/null  # start ssh-agent if not present
+#ssh-add -l &>/dev/null || eval `ssh-agent` &>/dev/null  # start ssh-agent if not present
+KEYCHAIN=/usr/bin/keychain
+if [ -f "$KEYCHAIN" ]; then
+	eval $(keychain --eval id_rsa)
+fi
