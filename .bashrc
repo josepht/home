@@ -101,9 +101,6 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
-if [ -f /etc/profile.d/bash_completion.sh ] && ! shopt -oq posix; then
-	. /etc/profile.d/bash_completion.sh
-fi
 
 # personal stuff
 export PATH=$PATH:$HOME/bin
@@ -193,3 +190,12 @@ if [ -f "$KEYCHAIN" ]; then
 	eval $(keychain --eval id_rsa)
 fi
 
+function make() {
+	MAKEFILE=Makefile.jast
+	if [ -f "$MAKEFILE" ]; then
+		echo "Found $MAKEFILE, using that..."
+		/usr/bin/make -f $MAKEFILE $@
+	else
+		/usr/bin/make $@
+	fi
+}
