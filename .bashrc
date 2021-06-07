@@ -102,6 +102,11 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+# Support bash completion on Fedora too.
+if [ -f /etc/profile.d/bash_completion.sh ] && ! shopt -oq posix; then
+	. /etc/profile.d/bash_completion.sh
+fi
+
 # personal stuff
 export PATH=$PATH:$HOME/bin
 export EDITOR=vim
