@@ -204,3 +204,8 @@ function make() {
 		/usr/bin/make $@
 	fi
 }
+
+# Local bash completion
+if [ -f ~/.bash_completion ] && ! shopt -oq posix; then
+	. ~/.bash_completion
+fi

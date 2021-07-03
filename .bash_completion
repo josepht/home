@@ -143,3 +143,16 @@ _get_projects ()
 
 }
 complete -F _get_projects project
+
+_get_startup ()
+{
+	local cur
+	COMPREPLY=()
+
+	cur=${COMP_WORDS[COMP_CWORD]}
+
+	COMPREPLY=( $(compgen -W "$(~/bin/startup.sh cmds)" -- ${cur}) )
+
+	return 0
+}
+complete -F _get_startup startup.sh
