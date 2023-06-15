@@ -1,5 +1,7 @@
 #!/bin/sh
 
+mkdir ~/.vimbackup/
+
 VUNDLE=~/.vim/bundle/Vundle.vim
 
 if [ -d "$VUNDLE" ]; then
