@@ -117,11 +117,11 @@ export WORKON_HOME=$HOME/environments
 
 # setxkbmap -layout us -option ctrl:nocaps
 
-if which brew &>/dev/null; then
-    if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
-    fi
-fi
+#if which brew &>/dev/null; then
+#    if [ -f $(brew --prefix)/etc/bash_completion ]; then
+#    . $(brew --prefix)/etc/bash_completion
+#    fi
+#fi
 
 alias tclsh='rlwrap tclsh'
 #if [ -f ~/bin/byobu.sh ];then
