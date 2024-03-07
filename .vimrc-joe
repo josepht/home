@@ -65,9 +65,9 @@ set showmode
 set cedit=
 set ai
 "set textwidth=70
-set ts=4
-set sw=4
-set sts=4
+set ts=8
+set sw=8
+set sts=8
 "set expandtab
 set backspace=indent,eol,start
 
@@ -119,9 +119,13 @@ if has("autocmd")
 	autocmd BufNewFile,BufRead *.run,t[cs]_control set filetype=yaml
 endif
 
-inoremap <leader>dl # <C-R>=strftime("%c")<CR> Joe Talbott <jsimmons-talbott@redhat.com><CR>
-inoremap <leader>dp # <C-R>=strftime("%c")<CR> Joe Talbott <joetalbott@gmail.com><CR>
+inoremap <leader>tdl #############################################################################<CR># <C-R>=strftime("%c")<CR> Joe Talbott <jsimmons-talbott@redhat.com> #<CR>#############################################################################<CR><CR>### Task list ###<CR><CR>### Done ###<CR><CR>
 
+inoremap <leader>dl #############################################################################<CR># <C-R>=strftime("%c")<CR> Joe Talbott <jsimmons-talbott@redhat.com> #<CR>#############################################################################<CR>
+
+inoremap <leader>dp ######################################################################<CR># <C-R>=strftime("%c")<CR> Joe Talbott <joetalbott@gmail.com> #<CR>######################################################################<CR>
+
+inoremap <leader>rb Reviewed-by: Joe Simmons-Talbott <josimmon@redhat.com>
 inoremap <leader>je # <C-R>=strftime("%c")<CR> Joe Talbott <joetalbott@gmail.com><CR>---------------------------------------<CR><CR><CR><ESC>kki
 map <leader>T :set noai<CR>0idl<CR><CR>Todo:<CR>  * <CR>Done:<CR>Backlog:<CR><CR><ESC>?Todo:<CR>/  \* /e<CR>:set ai<CR>a
 
