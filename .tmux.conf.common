@@ -62,3 +62,5 @@ bind "'" choose-window
 set -g default-command /bin/bash
 
 set -g default-terminal "screen-256color"
+
+set-option -g history-limit 50000
