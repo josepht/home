@@ -146,6 +146,7 @@ if [ -n "$VIRTUAL_ENV" ]; then
 fi
 
 export PATH=/usr/local:/usr/local/bin:$PATH
+export PATH=/usr/lib64/ccache:$PATH
 # virtualenv or pipenv
 export VENV_TYPE=virtualenvwrapper
 
