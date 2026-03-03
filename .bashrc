@@ -218,8 +218,14 @@ if [ -f ~/.bash_completion ] && ! shopt -oq posix; then
 	. ~/.bash_completion
 fi
 
-set-title(){
+old-set-title(){
   ORIG=$PS1
   TITLE="\e]2;$@\a"
+  PS1=${ORIG}${TITLE}
+}
+
+set-title(){
+  ORIG=$PS1
+  TITLE="\[\e]2;$@\a\]"
   PS1=${ORIG}${TITLE}
 }
